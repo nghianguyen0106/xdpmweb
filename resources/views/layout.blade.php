@@ -115,8 +115,9 @@
                             {{-- <li><a href="#"><span class="icon_heart_alt"></span>
                                 <div class="tip">2</div>
                             </a></li> --}}
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
+                            <li><a href="{{URL::to('shop-cart')}}"><span class="icon_bag_alt"></span>
+                                <?php $x = 1?>
+                                <div class="tip">{{ $x }}</div>
                             </a></li>
                         </ul>
                     </div>
@@ -129,7 +130,13 @@
     </header>
     <!-- Header Section End -->
 
+
+
+
     @yield('user_content')
+
+
+
 
     <!-- Footer Section Begin -->
 <footer class="footer">

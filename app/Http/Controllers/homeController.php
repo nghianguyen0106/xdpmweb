@@ -59,4 +59,8 @@ class homeController extends Controller
     {
         return view('register');   
     }
+    public function shopcart()
+    {
+        return view('shop-cart');   
+    }
 }

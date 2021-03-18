@@ -232,6 +232,8 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- List of product --}}
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
                        @foreach($db as $item)
@@ -243,7 +245,7 @@
                                     <ul class="product__hover">
                                         <li><a href="img/shop/shop-9.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                                        <li><a href="{{URL::to('/addtocart/{id}')}}"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
@@ -256,6 +258,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
+                                    
                                     <div class="product__price">{{ $item->spGia}} <span>$ 59.0</span></div>
                                 </div>
                             </div>
