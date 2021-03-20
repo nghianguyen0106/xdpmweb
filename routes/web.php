@@ -15,9 +15,9 @@ Route::get('/blog-details', 'homeController@blogD');
 Route::get('/shop-cart', 'homeController@shopcart');
 
 //---admin---//
-Route::get('admin','adminController@index');
-
-
+Route::get('/admin','adminController@index');
+Route::get('/type','admincontroller@type');
+Route::get('/logoutad','adminController@logout');
 
 // --------------CART-----------//
 Route::get('/addtocart/{id}','cartController@add');
@@ -34,9 +34,12 @@ Route::get('/addtocart/{id}','cartController@add');
 Route::get('/login','homeController@login');
 Route::get('/logout','homeController@logout');//logout
 Route::get('/register','homeController@register');//logout
-
 Route::post('/checklogin','loginController@login');
 Route::post('/checkregister','registerController@register');
+
+
+
 // -- admin -- //
 
-Route::get('/login','loginController@ADlogin');
+Route::get('/adlogin','adminController@ADlogin');
+Route::post('/checkloginad','adminController@checklogin');
