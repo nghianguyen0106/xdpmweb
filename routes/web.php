@@ -13,16 +13,19 @@ Route::get('/checkout', 'homeController@checkout');
 Route::get('/blog', 'homeController@blog');
 Route::get('/blog-details', 'homeController@blogD');
 Route::get('/shop-cart', 'homeController@shopcart');
-
 //---admin---//
 Route::get('/admin','adminController@index');
 Route::get('/type','admincontroller@type');
 Route::get('/logoutad','adminController@logout');
+Route::get('/admintype','adminController@type');
+Route::get('adminbrand','adminController@brand');
+Route::get('/adminproduct','admincontroller@product');
+Route::get('/adminedit','adminController@adminedit');
+
+
+
 
 // --------------CART-----------//
-Route::get('/addtocart/{id}','cartController@add');
-
-
 
 
 

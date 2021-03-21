@@ -30,11 +30,11 @@ class adminController extends Controller
     	}
     	else
     	{
-    		session::put('loginrequire','Login first !')''
+    		session::put('loginrequire','Login first !');
     			return Redirect::to('adlogin');
     	}
     }
-    public function brand()
+   public function brand()
     {
     	if(session::has('adminname'))
     	{
@@ -42,9 +42,33 @@ class adminController extends Controller
     	}
     	else
     	{
-    		session::put('loginrequire','Login first !')''
+    		session::put('loginrequire','Login first !');
     			return Redirect::to('adlogin');
     	}
+    }
+    public function product()
+    {
+        if(session::has('adminname'))
+        {
+            return view('admin.product');
+        }
+        else
+        {
+            session::put('loginrequire','Login first !');
+                return Redirect::to('adlogin');
+        }
+    }
+    public function adminedit()
+    {
+        if(session::has('adminname'))
+        {
+            return view('admin.edit');
+        }
+        else
+        {
+            session::put('loginrequire','Login first !');
+                return Redirect::to('adlogin');
+        }
     }
 
      public function logout()
@@ -60,7 +84,7 @@ class adminController extends Controller
     //-- end go to --//
 
 
-
+// -- Login -- //
     public function checklogin(Request $re)
     {
     	if($re == null)return;
@@ -76,9 +100,15 @@ class adminController extends Controller
     		}
     		else
     		{
-    			Session::put('error','Sai tên đăng nhập hoặc mật khẩu !');
+    			Session::put('error','Wrong username or password !');
     			return Redirect::to('adlogin');
     		}
     	}
+    }
+// --endlogin -- //
+    
+    public function edit(Request $re,$id,$act)
+    {
+        
     }
 }

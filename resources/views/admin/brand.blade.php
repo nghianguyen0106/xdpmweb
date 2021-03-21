@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('title')
- Quản lý loại sản phẩm
+ Quản lý thương hiệu
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Quản lý loại
+      Quản lý thương hiệu
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
@@ -39,22 +39,22 @@
           <tr>
            
             <th>Mã</th>
-            <th>Tên loại</th>
+            <th>Tên thương hiệu</th>
             <th>Hành động</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
-        <tbody  >
+        <tbody style="text-align:  center;>
           
           
           <tr>
             
-          <?php $db = DB::table('loai')->Select('loaiMa','loaiTen')->get() ?>
+          <?php $db = DB::table('thuonghieu')->Select('thMa','thTen')->get() ?>
             @foreach($db as $k => $v)
-            <td>{{$v->loaiMa}}</td>
-            <td>{{$v->loaiTen}}</td>
+            <td>{{$v->thMa}}</td>
+            <td>{{$v->thTen}}</td>
               <td>
-              <a href="{{URL::to('/adminedit/{$v->loaiMa}')}}" class="active" ui-toggle-class=""><i class="fa far fa-edit"></i></a>&nbsp;<a><i class="fa fas fa-trash" style="color: red;"></i></a>
+              <a href="" class="active" ui-toggle-class=""><i class="fa far fa-edit"></i>&nbsp;<i class="fa fas fa-trash" style="color: red;"></i></a>
             </td>
           </tr>
             @endforeach

@@ -263,9 +263,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Quản lý sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="typography.html">Loại</a></li>
-						<li><a href="glyphicon.html">Thương hiệu</a></li>
-                        <li><a href="grids.html">Sản phẩm</a></li>
+						<li><a href="{{URL::to('/admintype')}}">Loại</a></li>
+						<li><a href="{{URL::to('/adminbrand')}}">Thương hiệu</a></li>
+                        <li><a href="{{URL::to('/adminproduct')}}">Sản phẩm</a></li>
                     </ul>
                 </li>
                 
@@ -282,7 +282,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            
        
                 <li>
-                    <a href="{{URL::to('adlogin')}}">
+                    <a href="{{URL::to('logoutad')}}">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
@@ -308,9 +308,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </section>
  <!-- footer -->
           <div class="footer">
-            <div class="wthree-copyright">
-              <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-            </div>
+  
           </div>
   <!-- / footer -->
 </section>

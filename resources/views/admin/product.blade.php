@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('title')
- Quản lý loại sản phẩm
+ Quản lý sản phẩm
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Quản lý loại
+      Quản lý sản phẩm
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
@@ -37,24 +37,44 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-           
+            <th>Stt</th>
             <th>Mã</th>
-            <th>Tên loại</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Thương hiệu</th>
+            <th>Loại</th>
+            <th>Bảo hành</th>
+            <th>Hình</th>
+            <th>Tình trạng</th>
             <th>Hành động</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
-        <tbody  >
+        <tbody  style="text-align:  center;">
           
           
           <tr>
             
-          <?php $db = DB::table('loai')->Select('loaiMa','loaiTen')->get() ?>
+          <?php $db = DB::table('sanpham')->Select('spMa','spTen','spGia','thMa','loaiMa','spBaohanh','spHinh','spTinhtrang')->get() ?>
             @foreach($db as $k => $v)
+            <td>{{$k +1 }}</td>
+            <td>{{$v->spMa}}</td>
+            <td>{{$v->spTen}}</td>
+            <td>{{number_format($v->spGia)}}</td>
+            <td>{{$v->thMa}}</td>
             <td>{{$v->loaiMa}}</td>
-            <td>{{$v->loaiTen}}</td>
+            <td>{{$v->spBaohanh}}</td>
+            <td><img style="widows: 100px;height: 100px;" src="{{{'public/frontend/img/'.$v->spHinh}}}" alt="hinh"></td>
+            <td>
+                @if($v->spTinhtrang ==1)
+                  <i class="fa fa-check text-success text-active"></i></td>
+                  @endif
+                  @if($v->spTinhtrang !=1)
+                  <i class="fa fa-times text-danger text" style="color: red;"></i></td>
+                  @endif
+
               <td>
-              <a href="{{URL::to('/adminedit/{$v->loaiMa}')}}" class="active" ui-toggle-class=""><i class="fa far fa-edit"></i></a>&nbsp;<a><i class="fa fas fa-trash" style="color: red;"></i></a>
+              <a href="" class="active" ui-toggle-class=""><i class="fa far fa-edit"></i>&nbsp;<i class="fa fas fa-trash" style="color: red;"></i></a>
             </td>
           </tr>
             @endforeach
